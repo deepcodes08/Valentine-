@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
+  text-align: center;
+}
+
+/* Common */
+.page {
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.page.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+button {
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: #444;
+  color: white;
+  position: absolute;
+}
+
+/* Teddy */
+.teddy {
+  font-size: 5rem;
+  margin: 20px 0;
+}
+
+/* Message box */
+.message {
+  background: rgba(255,255,255,0.15);
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 500px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>💘 Will you be my Valentine?</h1>
+
+  <div>
+    <button class="yes" onclick="goNext()">YES 💖</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">NO 😤</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <div class="teddy">ʕ•ᴥ•ʔ</div>
+
+  <div class="message">
+    <p>I may not say it every day,</p>
+    <p>but I truly can’t imagine my life without you.</p>
+
+    <p>You are my comfort, my safe place,</p>
+    <p>and the reason my heart feels calm.</p>
+
+    <p><b>I need you.</b><br>
+    Not because I’m weak,<br>
+    but because my world feels incomplete without you.</p>
+
+    <p>💗 Happy Valentine’s Day 💗</p>
+  </div>
+</div>
+
+<script>
+function goNext() {
+  document.getElementById("page1").classList.remove("active");
+  document.getElementById("page2").classList.add("active");
+}
+
+function moveNo() {
+  const btn = document.getElementById("noBtn");
+  btn.style.left = Math.random() * 80 + "vw";
+  btn.style.top = Math.random() * 80 + "vh";
+}
+</script>
+
+</body>
+  </html>
